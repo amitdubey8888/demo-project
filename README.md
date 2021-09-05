@@ -1,7 +1,7 @@
 # Demo Project
 
 
-## Live URL: https://demo-project.herokuapp.com
+## Live URL: https://dynamo-db.herokuapp.com/
 
 
 ## Quick Start
