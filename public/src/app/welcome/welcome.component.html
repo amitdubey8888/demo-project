@@ -1,0 +1,34 @@
+<div class="welcome">
+  <form class="form">
+    <div class="row">
+      <div class="col-12">
+        <div class="heading">Welcome</div>
+      </div>
+      <div class="col-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Gender</th>
+              <th>DOB</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{userData?.name}}</td>
+              <td>{{userData?.email}}</td>
+              <td>{{userData?.mobile}}</td>
+              <td>{{userData?.gender}}</td>
+              <td>{{userData?.dob}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary submit" (click)="logout()">Logout</button>&nbsp;
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,38 @@
+<div class="login">
+  <form class="form">
+    <div class="row">
+      <div class="col-12">
+        <div class="heading">Login</div>
+      </div>
+      <div class="col-12">
+        <div class="mb-3 row">
+          <label for="email" class="col-sm-12 col-form-label">Email</label>
+          <div class="col-sm-12">
+            <input type="email" class="form-control" name="email" [(ngModel)]="userData.email">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="password" class="col-sm-12 col-form-label">Password</label>
+          <div class="col-sm-12">
+            <input type="password" class="form-control" name="password" [(ngModel)]="userData.password">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <div class="col-sm-12">
+            <button class="btn btn-primary submit" (click)="login()">Login</button>&nbsp;
+            <button class="btn btn-warning submit" (click)="register()">Register</button>
+          </div>
+        </div>
+        <div class="mb-5 row" *ngIf="errors.length">
+          <div class="col-sm-12">
+            <div class="error-section">
+              <ul class="errors" *ngFor="let error of errors; let i = index;">
+                <li class="error">{{i+1}}. {{error}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

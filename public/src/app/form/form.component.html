@@ -1,0 +1,90 @@
+<div class="create">
+    <div class="form">
+        <div class="row">
+            <div class="col-12">
+                <div class="heading">Create Form</div>
+            </div>
+            <div class="col-12">
+                <div class="row" *ngFor="let data of builderData; let i = index;">
+                    <div class="col-12" *ngIf="i == 0">
+                        <div class="mb-3 row">
+                            <label for="form_name" class="col-sm-12 col-form-label">Form Name</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" name="form_name" [(ngModel)]="data.form_name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3 row">
+                            <label for="label_name" class="col-sm-12 col-form-label">Label</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" name="label_name" [(ngModel)]="data.label_name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3 row">
+                            <label for="input_name" class="col-sm-12 col-form-label">Name</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" name="input_name" [(ngModel)]="data.input_name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="mb-3 row">
+                            <label for="input_type" class="col-sm-12 col-form-label">Type</label>
+                            <div class="col-sm-12">
+                                <select class="form-control" name="input_type" [(ngModel)]="data.input_type">
+                                    <option *ngFor="let inputType of inputTypes;" [value]="inputType.type">
+                                        {{inputType.type}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="mb-3 row">
+                            <label for="input_reaonly" class="col-sm-12 col-form-label">Read Only</label>
+                            <div class="col-sm-12">
+                                <select class="form-control" name="input_reaonly" [(ngModel)]="data.input_reaonly">
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1 remove">
+                        <button class="btn btn-danger remove-field" (click)="removeField(i)" *ngIf="i!=0">X</button>
+                    </div>
+                </div>
+                <div class="row add">
+                    <div class="col-6">
+                        <div class="mb-3 row">
+                            <div class="col-sm-12">
+                                <button class="btn btn-info" (click)="addField()">Add Field</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3 row">
+                            <div class="col-sm-12 text-right">
+                                <button class="btn btn-primary" (click)="saveForm()">Generate Form</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="generate">
+    <div class="row">
+        <div class="col-12">
+            <div class="heading">Generated Form</div>
+        </div>
+        <div class="col-12" *ngFor="let form of generatedForm;">
+            <div class="generated-form" [innerHtml]="form | sanitize"></div>
+        </div>
+    </div>
+</div>

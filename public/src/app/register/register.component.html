@@ -1,0 +1,89 @@
+<div class="register">
+  <form class="form">
+    <div class="row">
+      <div class="col-12">
+        <div class="heading">Register</div>
+      </div>
+      <div class="col-12">
+        <div class="row">
+          <div class="col-6">
+            <div class="mb-3 row">
+              <label for="name" class="col-sm-12 col-form-label">Name</label>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="name" [(ngModel)]="userData.name">
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="mb-3 row">
+              <label for="email" class="col-sm-12 col-form-label">Email</label>
+              <div class="col-sm-12">
+                <input type="email" class="form-control" name="email" [(ngModel)]="userData.email">
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="mb-3 row">
+              <label for="mobile" class="col-sm-12 col-form-label">Mobile</label>
+              <div class="col-sm-12">
+                <input type="number" class="form-control" name="mobile" [(ngModel)]="userData.mobile">
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="mb-3 row">
+              <label for="password" class="col-sm-12 col-form-label">Password</label>
+              <div class="col-sm-12">
+                <input type="password" class="form-control" name="password" [(ngModel)]="userData.password">
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="mb-3 row">
+              <label for="confirmPassword" class="col-sm-12 col-form-label">Confirm Password</label>
+              <div class="col-sm-12">
+                <input type="password" class="form-control" name="confirmPassword"
+                  [(ngModel)]="userData.confirmPassword">
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="mb-3 row">
+              <label for="gender" class="col-sm-12 col-form-label">Gender</label>
+              <div class="col-sm-12">
+                <select class="form-control" name="gender" [(ngModel)]="userData.gender">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="mb-3 row">
+              <label for="don" class="col-sm-12 col-form-label">DOB</label>
+              <div class="col-sm-12">
+                <input type="date" class="form-control" name="dob" [(ngModel)]="userData.dob">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <div class="col-sm-12">
+            <button class="btn btn-primary submit" (click)="register()">Register</button>&nbsp;
+            <button class="btn btn-warning submit" (click)="login()">Login</button>
+          </div>
+        </div>
+        <div class="mb-5 row" *ngIf="errors.length">
+          <div class="col-sm-12">
+            <div class="error-section">
+              <ul class="errors" *ngFor="let error of errors; let i = index;">
+                <li class="error">{{i+1}}. {{error}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
