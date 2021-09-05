@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const PdfController = require('../controllers/pdf');
+// const PdfController = require('../controllers/pdf');
 
 // router.get('/download/:pdf_name(*)', PdfController.downloadPDF);
 // router.post('/generate-pdf-by-url/:pdf_name?', PdfController.generatePdfByUrl);
